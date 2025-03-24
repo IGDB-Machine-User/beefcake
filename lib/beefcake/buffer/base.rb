@@ -1,5 +1,6 @@
-module Beefcake
+# frozen_string_literal: true
 
+module Beefcake
   class Buffer
 
     MinUint32 =  0
