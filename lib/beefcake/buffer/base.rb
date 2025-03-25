@@ -78,7 +78,7 @@ module Beefcake
     end
 
     def buf=(new_buf)
-      @buf = new_buf.force_encoding('BINARY')
+      @buf = new_buf.dup.force_encoding('BINARY')
       @cursor = 0
     end
 
@@ -88,7 +88,7 @@ module Beefcake
     end
 
     def <<(bytes)
-      bytes = bytes.force_encoding('BINARY') if bytes.respond_to? :force_encoding
+      bytes = bytes.dup.force_encoding('BINARY') if bytes.respond_to? :force_encoding
       buf << bytes
     end
 
